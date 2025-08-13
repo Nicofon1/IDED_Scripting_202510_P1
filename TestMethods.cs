@@ -43,27 +43,35 @@ namespace TestProject1
 
         internal static bool FoundElementAfterSorted(List<int> list, int value)
         {
-            return false;
-        }
-
-
-        internal static List<int> ListaAzar(List<int> list)
-        {
-            List<int> listAzar = new List<int>();
             Random random = new Random();
 
-            foreach (int i in list)
-            {
-                int num;
-                num = random.Next();
-
-                if (num < 100)
+            for (int i = 0; i < list.Count - 1; i++)
+            {            
+                for (int j = 0; j < list.Count - i - 1; j++)
                 {
-                    listAzar.Add(num);
-                }              
+
+                    if (list[j] > list[j + 1])
+                    {
+                        int a;
+                        a = list[j];
+                        list[j] = list[j + 1];
+                        list[j + 1] = a;
+
+                    }
+
+                }
+
             }
 
-            return null;
+            for (int i = 0; i < list.Count - 1; i++)
+            {
+                if (value == list[i])
+                {
+                    return true;
+                }
+            }
+
+            return false;
         }
     }
 }
