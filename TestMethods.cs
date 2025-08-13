@@ -38,14 +38,32 @@ namespace TestProject1
 
         internal static List<uint> StackToList(Stack<uint> stack)
         {
-            
-            
             return null;
         }
 
         internal static bool FoundElementAfterSorted(List<int> list, int value)
         {
             return false;
+        }
+
+
+        internal static List<int> ListaAzar(List<int> list)
+        {
+            List<int> listAzar = new List<int>();
+            Random random = new Random();
+
+            foreach (int i in list)
+            {
+                int num;
+                num = random.Next();
+
+                if (num < 100)
+                {
+                    listAzar.Add(num);
+                }              
+            }
+
+            return null;
         }
     }
 }
